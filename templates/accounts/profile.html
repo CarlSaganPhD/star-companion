@@ -1,0 +1,20 @@
+<!-- templates/accounts/profile.html -->
+
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Profile</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ request.user.username }}</h5>
+          <p class="card-text">First Name: {{ request.user.first_name }}</p>
+          <p class="card-text">Last Name: {{ request.user.last_name }}</p>
+          <p class="card-text">Email: {{ request.user.email }}</p>
+          <!-- Add other profile details you wish to display here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

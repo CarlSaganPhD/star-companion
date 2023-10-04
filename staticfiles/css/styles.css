@@ -1,0 +1,10 @@
+.container {
+  max-width: 80vw;
+  margin: 0 auto; /* This will center the container horizontally */
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 80vw;
+  }
+}

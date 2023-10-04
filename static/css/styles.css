@@ -1,0 +1,100 @@
+.container {
+  max-width: 80vw;
+  margin: 0 auto; /* This will center the container horizontally */
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 80vw;
+  }
+}
+
+.centered-form {
+  width: 80vw;
+  max-width: 500px; /* or whatever maximum width you desire */
+}
+
+body {
+  background-color: #0e2647;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+h1.titleText {
+  color: white !important;
+  margin-top: 40px;
+}
+
+.stripe.red {
+  background-color: #c72336; /* Change to your desired color */
+}
+
+.stripe.blue {
+  background-color: #bd5700; /* Change to your desired color */
+}
+
+.stripe.green {
+  background-color: #dba548; /* Change to your desired color */
+}
+
+.centered-form-container {
+  display: flex;
+  flex-direction: column; /* Add this */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.stripeWrapper {
+  margin-bottom: -10px; /* This moves the stripes up */
+}
+
+.stripe {
+  height: 5vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Targeting text input and password fields */
+.form-control[type="text"],
+.form-control[type="password"] {
+  background-color: transparent; /* Make it transparent */
+  border-radius: 0; /* Remove rounded corners */
+  border: 1px solid #ccc; /* Optional: set a border if desired */
+}
+
+/* Targeting the button with the .btn-primary class */
+.btn-primary {
+  background-color: transparent; /* Make it transparent */
+  border-radius: 0; /* Remove rounded corners */
+  border: 1px solid #dedede; /* Optional: set a border if desired, using the default blue color of .btn-primary in Bootstrap */
+  color: #dedede; /* Set text color to the default blue of .btn-primary */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.1
+  ); /* Slight background on hover/focus for feedback */
+}
+
+#login-button {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Add this for smooth transition */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="text"]:focus,
+input[type="password"]:focus {
+  color: #ffffff;
+}

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "SpaceAge";
+  src: url("/static/spaceage.ttf") format("truetype");
+}
+
+body {
+  font-family: "SpaceAge", sans-serif;
+}
