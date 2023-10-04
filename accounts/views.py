@@ -6,6 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from .models import UserProfile
+
 
 def signup(request):
     if request.method == "POST":
@@ -25,3 +29,23 @@ def signup(request):
 @login_required
 def profile(request):
     return render(request, "accounts/profile.html")
+
+
+@login_required
+def update_level(request):
+    if request.method == "POST":
+        try:
+            new_level = int(request.POST.get("level"))
+
+            profile, created = UserProfile.objects.get_or_create(user=request.user)
+            profile.level = new_level
+            profile.save()
+
+            return JsonResponse(
+                {"success": True, "message": "Level updated successfully."}
+            )
+        except ValueError:
+            return JsonResponse({"success": False, "message": "Invalid level value."})
+    return JsonResponse(
+        {"success": False, "message": "Method not allowed."}, status=405
+    )
