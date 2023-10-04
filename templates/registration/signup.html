@@ -1,4 +1,77 @@
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Sign up</button>
-</form>
+{% extends "base.html" %} {% block content %}
+
+<div class="centered-form-container">
+  <div class="stripe red"></div>
+  <div class="stripe blue"></div>
+  <div class="stripe green"></div>
+  <div class="centered-form">
+    <h1
+      class="text-center mb-4 titleText"
+      data-aos="zoom-in"
+      style="font-family: 'SpaceAge', sans-serif"
+    >
+      Star Companion
+    </h1>
+
+    <form method="post" class="needs-validation" novalidate>
+      {% csrf_token %}
+
+      <!-- Assuming you have fields like username, email, and password in your form. Adapt as necessary -->
+      <div class="form-group" data-aos="zoom-in">
+        <input
+          type="text"
+          class="form-control"
+          id="{{ form.username.id_for_label }}"
+          name="{{ form.username.name }}"
+          placeholder="Username"
+          required
+        />
+        <div class="invalid-feedback">Please provide a valid username.</div>
+      </div>
+
+      <!-- Assuming email for sign-up -->
+      <div class="form-group" data-aos="zoom-in">
+        <input
+          type="email"
+          class="form-control"
+          id="{{ form.email.id_for_label }}"
+          name="{{ form.email.name }}"
+          placeholder="Email"
+          required
+        />
+        <div class="invalid-feedback">Please provide a valid email.</div>
+      </div>
+
+      <div class="form-group" data-aos="zoom-in">
+        <input
+          type="password"
+          class="form-control"
+          id="{{ form.password1.id_for_label }}"
+          name="{{ form.password1.name }}"
+          placeholder="Password"
+          required
+        />
+        <div class="invalid-feedback">Please provide a valid password.</div>
+      </div>
+
+      <!-- Assuming confirm password for sign-up -->
+      <div class="form-group" data-aos="zoom-in">
+        <input
+          type="password"
+          class="form-control"
+          id="{{ form.password2.id_for_label }}"
+          name="{{ form.password2.name }}"
+          placeholder="Confirm Password"
+          required
+        />
+        <div class="invalid-feedback">Please confirm your password.</div>
+      </div>
+
+      <button type="submit" data-aos="zoom-in" class="btn btn-primary">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
