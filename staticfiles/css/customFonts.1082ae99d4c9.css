@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "SpaceAge";
+  src: url("/static/spaceage.ce43c6569134.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CourierPrime";
+  src: url("/static/CourierPrime-Regular.fba4686ed1d1.ttf") format("truetype");
+}
+
+body {
+  font-family: "CourierPrime", sans-serif;
+}

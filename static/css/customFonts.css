@@ -3,6 +3,11 @@
   src: url("/static/spaceage.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "CourierPrime";
+  src: url("/static/CourierPrime-Regular.ttf") format("truetype");
+}
+
 body {
-  font-family: "SpaceAge", sans-serif;
+  font-family: "CourierPrime", sans-serif;
 }
